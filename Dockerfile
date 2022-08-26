@@ -53,8 +53,8 @@ RUN if [ "$USE_CHINA_MIRROR" = 1 ]; then \
   && npm config set PRISMA_BINARIES_MIRROR https://r.cnpmjs.org/-/binary/prisma; \
   fi;\
   apk add --no-cache --virtual .build-deps git make gcc g++ python3 \
-  && npm -v \
-  && sudo npm install pm2 pnpm prisma -g \
+  && npm install pm2 pnpm prisma yarn -g \
+  && yarn add @nodestatus/web-utils \
   && pnpm install --prod --frozen-lockfile \
   && npm cache clean --force \
   && apk del .build-deps
